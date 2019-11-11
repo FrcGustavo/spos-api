@@ -4,6 +4,7 @@ const app = express();
 const morgan = require('morgan');
 
 const { config } = require('./config/index');
+const OrderRoutes = require('./routes/OrderRoutes');
 
 app.use(morgan('dev'));
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
+OrderRoutes(app);
 
 // Catch 404
 
