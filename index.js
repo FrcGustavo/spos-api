@@ -5,6 +5,7 @@ const morgan = require('morgan');
 
 const { config } = require('./config/index');
 const ProductRoutes = require('./routes/ProductRoutes');
+const OrderRoutes = require('./routes/OrderRoutes');
 
 app.use(morgan('dev'));
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 ProductRoutes(app);
+OrderRoutes(app);
 
 // Catch 404
 
