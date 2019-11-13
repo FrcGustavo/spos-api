@@ -3,7 +3,7 @@ const { ObjectId } = require('mongodb');
 
 class OrdersService {
     constructor() {
-        this.order = 'order';
+        this.order = 'orders';
         this.products = 'orderProducts'
         this.mongoDB = new MongoLib();
     }
