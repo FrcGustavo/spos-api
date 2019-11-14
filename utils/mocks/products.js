@@ -74,19 +74,23 @@ class ProductsServiceMock {
     }
 
     getProduct({ id }) {
-        return Promise.resolve(productsMock[0]);
+        if(id)      
+            return Promise.resolve(productsMock[0]);
     }
 
     createProduct({ product }) {
-        return Promise.resolve(productsMock[0]._id);
+        if(product)
+            return Promise.resolve(productsMock[0]._id);
     }
 
     updateProduct({ productId, product }) {
-        return Promise.resolve(productsMock[0]._id);
+        if(productId && product)
+            return Promise.resolve(productsMock[0]._id);
     }
 
     deleteProduct({ productId }) {
-        return Promise.resolve(productsMock[0]._id);
+        if(productId)
+            return Promise.resolve(productsMock[0]._id);
     }
 }
 
