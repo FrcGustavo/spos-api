@@ -1,5 +1,5 @@
 const MongoLib = require('../lib/index');
-const bcrypt = require('bycript');
+const bcrypt = require('bcrypt');
 
 class UsersService {
     constructor() {
@@ -21,6 +21,17 @@ class UsersService {
             password: hashedPassword
         });
         return createdUserId;
+    }
+
+    async getOrCreateUser({ user }) {
+        const queryUser = await this.getUser({ email: user.email });
+
+        if(queryUser) {
+            return queryUser;
+        } 
+
+        await this.createUser({ user });
+        return this.getUser({ email: user.email });
     }
 }
 
