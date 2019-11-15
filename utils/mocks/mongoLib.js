@@ -20,9 +20,11 @@ createManyStub.withArgs('orderProducts').resolves(ordersMock.products.map(({_id}
 
 const updateStub = sinon.stub()
 updateStub.withArgs('orders').resolves(ordersMock.orders[0]._id);
+updateStub.withArgs('products').resolves(productsMock[0]._id);
 
 const deleteStub = sinon.stub()
 deleteStub.withArgs('orders').resolves(ordersMock.orders[0]._id)
+deleteStub.withArgs('products').resolves(productsMock[0]._id)
 
 const deleteManyStub = sinon.stub()
 deleteManyStub.withArgs('orderProducts').resolves(ordersMock.products.length);
