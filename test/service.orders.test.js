@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const proxyquire = require('proxyquire');
 const { MongoLibMock, getAllStub, getStub } = require('../utils/mocks/mongoLib');
 const { ordersMock } = require('../utils/mocks/orders');
@@ -35,4 +35,4 @@ describe('service - orders', function() {
             assert.deepEqual(result, expected);
         });
     });
-});
+});*/

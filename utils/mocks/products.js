@@ -73,8 +73,8 @@ class ProductsServiceMock {
         return Promise.resolve(productsMock);
     }
 
-    getProduct({ id }) {
-        if(id)      
+    getProduct({ productId }) {
+        if(productId)      
             return Promise.resolve(productsMock[0]);
     }
 
