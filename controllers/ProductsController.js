@@ -11,9 +11,11 @@ class ProductsController {
     }
 
     async index(req, res, next) {
-        const { tags } = req.query;
+        const { limit, skip, sort } = req.query;
+        const query = {};
+        const paginate = { limit: Number(limit), skip: Number(skip), sort: Number(sort) };
         try {
-            const products = await this.productsService.getProducts({ tags });
+            const products = await this.productsService.getProducts({ query, paginate });
             res.status(200).json({
                 data: products,
                 message: 'products listed'

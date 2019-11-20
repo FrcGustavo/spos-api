@@ -6,9 +6,8 @@ class ProductsService {
         this.mongoDB = new MongoLib();
     }
 
-    async getProducts({ tags }) {
-        const query = tags && { tags: { $in: tags } };
-        const products = await this.mongoDB.getAll(this.collection, query);
+    async getProducts({ query, paginate }) {
+        const products = await this.mongoDB.getAll(this.collection, query, paginate);       
         return  products || []; 
     }
 
